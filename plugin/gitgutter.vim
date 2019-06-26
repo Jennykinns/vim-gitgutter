@@ -90,49 +90,49 @@ endif
 
 " Primary functions {{{
 
-command! -bar GitGutterAll call gitgutter#all(1)
-command! -bar GitGutter    call gitgutter#process_buffer(bufnr(''), 1)
+" command! -bar GitGutterAll call gitgutter#all(1)
+" command! -bar GitGutter    call gitgutter#process_buffer(bufnr(''), 1)
 
-command! -bar GitGutterDisable call gitgutter#disable()
-command! -bar GitGutterEnable  call gitgutter#enable()
-command! -bar GitGutterToggle  call gitgutter#toggle()
+" command! -bar GitGutterDisable call gitgutter#disable()
+" command! -bar GitGutterEnable  call gitgutter#enable()
+" command! -bar GitGutterToggle  call gitgutter#toggle()
 
-command! -bar GitGutterBufferDisable call gitgutter#buffer_disable()
-command! -bar GitGutterBufferEnable  call gitgutter#buffer_enable()
-command! -bar GitGutterBufferToggle  call gitgutter#buffer_toggle()
+" command! -bar GitGutterBufferDisable call gitgutter#buffer_disable()
+" command! -bar GitGutterBufferEnable  call gitgutter#buffer_enable()
+" command! -bar GitGutterBufferToggle  call gitgutter#buffer_toggle()
 
 " }}}
 
 " Line highlights {{{
 
-command! -bar GitGutterLineHighlightsDisable call gitgutter#highlight#line_disable()
-command! -bar GitGutterLineHighlightsEnable  call gitgutter#highlight#line_enable()
-command! -bar GitGutterLineHighlightsToggle  call gitgutter#highlight#line_toggle()
+" command! -bar GitGutterLineHighlightsDisable call gitgutter#highlight#line_disable()
+" command! -bar GitGutterLineHighlightsEnable  call gitgutter#highlight#line_enable()
+" command! -bar GitGutterLineHighlightsToggle  call gitgutter#highlight#line_toggle()
 
 " }}}
 
 " Signs {{{
 
-command! -bar GitGutterSignsEnable  call gitgutter#sign#enable()
-command! -bar GitGutterSignsDisable call gitgutter#sign#disable()
-command! -bar GitGutterSignsToggle  call gitgutter#sign#toggle()
+" command! -bar GitGutterSignsEnable  call gitgutter#sign#enable()
+" command! -bar GitGutterSignsDisable call gitgutter#sign#disable()
+" command! -bar GitGutterSignsToggle  call gitgutter#sign#toggle()
 
 " }}}
 
 " Hunks {{{
 
-command! -bar -count=1 GitGutterNextHunk call gitgutter#hunk#next_hunk(<count>)
-command! -bar -count=1 GitGutterPrevHunk call gitgutter#hunk#prev_hunk(<count>)
+" command! -bar -count=1 GitGutterNextHunk call gitgutter#hunk#next_hunk(<count>)
+" command! -bar -count=1 GitGutterPrevHunk call gitgutter#hunk#prev_hunk(<count>)
 
 command! -bar GitGutterStageHunk   call gitgutter#hunk#stage()
 command! -bar GitGutterUndoHunk    call gitgutter#hunk#undo()
 command! -bar GitGutterPreviewHunk call gitgutter#hunk#preview()
 
 " Hunk text object
-onoremap <silent> <Plug>GitGutterTextObjectInnerPending :<C-U>call gitgutter#hunk#text_object(1)<CR>
-onoremap <silent> <Plug>GitGutterTextObjectOuterPending :<C-U>call gitgutter#hunk#text_object(0)<CR>
-xnoremap <silent> <Plug>GitGutterTextObjectInnerVisual  :<C-U>call gitgutter#hunk#text_object(1)<CR>
-xnoremap <silent> <Plug>GitGutterTextObjectOuterVisual  :<C-U>call gitgutter#hunk#text_object(0)<CR>
+" onoremap <silent> <Plug>GitGutterTextObjectInnerPending :<C-U>call gitgutter#hunk#text_object(1)<CR>
+" onoremap <silent> <Plug>GitGutterTextObjectOuterPending :<C-U>call gitgutter#hunk#text_object(0)<CR>
+" xnoremap <silent> <Plug>GitGutterTextObjectInnerVisual  :<C-U>call gitgutter#hunk#text_object(1)<CR>
+" xnoremap <silent> <Plug>GitGutterTextObjectOuterVisual  :<C-U>call gitgutter#hunk#text_object(0)<CR>
 
 
 " Returns the git-diff hunks for the file or an empty list if there
@@ -168,16 +168,16 @@ endfunction
 
 " Folds {{{
 
-command! -bar GitGutterFold call gitgutter#fold#toggle()
+" command! -bar GitGutterFold call gitgutter#fold#toggle()
 
 " }}}
 
-command! -bar GitGutterDebug call gitgutter#debug#debug()
+" command! -bar GitGutterDebug call gitgutter#debug#debug()
 
 " Maps {{{
 
-nnoremap <silent> <expr> <Plug>GitGutterNextHunk &diff ? ']c' : ":\<C-U>execute v:count1 . 'GitGutterNextHunk'\<CR>"
-nnoremap <silent> <expr> <Plug>GitGutterPrevHunk &diff ? '[c' : ":\<C-U>execute v:count1 . 'GitGutterPrevHunk'\<CR>"
+" nnoremap <silent> <expr> <Plug>GitGutterNextHunk &diff ? ']c' : ":\<C-U>execute v:count1 . 'GitGutterNextHunk'\<CR>"
+" nnoremap <silent> <expr> <Plug>GitGutterPrevHunk &diff ? '[c' : ":\<C-U>execute v:count1 . 'GitGutterPrevHunk'\<CR>"
 
 nnoremap <silent> <Plug>GitGutterStageHunk   :GitGutterStageHunk<CR>
 nnoremap <silent> <Plug>GitGutterUndoHunk    :GitGutterUndoHunk<CR>
